@@ -1,0 +1,29 @@
+name: 'Execução Manual'
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  e2e-tests:
+    
+    runs-on: ubuntu-latest
+    steps: 
+      # clone do projeto
+      - uses: actions/checkout@v4
+
+      # Instalação do Node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      # instalação das dependencias
+      - name: Instalando dependencias
+        run: npm install
+
+      # instalação o Mocha
+      - name: Instalando Mocha
+        run: npm install -g mocha
+
+      # executar os testes e2e
+      - name: Executando Testes E2E com Mocha
+        run: mocha run trabalho-final
