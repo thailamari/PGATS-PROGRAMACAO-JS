@@ -26,4 +26,4 @@ jobs:
 
       # executar os testes e2e
       - name: Executando Testes E2E com Mocha
-        run: mocha run trabalho-final
+        run: npx mocha trabalho-final
